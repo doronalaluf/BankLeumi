@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
@@ -34,6 +36,9 @@ public class CommonOps extends Base {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://www.leumi.co.il/");
+        driver.manage().window().maximize();
+        ManagePages.initBankLeumi();
+        wait = new WebDriverWait(driver, 5);
     }
 
 
@@ -53,5 +58,10 @@ public class CommonOps extends Base {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         return driver;
+    }
+
+    @AfterClass
+    public void EndSession (){
+        driver.quit();
     }
 }

@@ -4,6 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LocatingBranchesPage {
+
+    @FindBy(xpath = "//span[@class='title']")
+    public WebElement TitlePage;
+
+
     @FindBy(xpath = "//input[@class='watermark ui-autocomplete-input']")
     public WebElement SearchField;
 
@@ -12,5 +17,8 @@ public class LocatingBranchesPage {
 
     @FindBy(xpath = "//div[@class='col-sm-12']/h1/span")
     public WebElement TitleBranch;
+
+    @FindBy(xpath = "//span[@class='open_status']")
+    public WebElement StatusBranch;
 
 }

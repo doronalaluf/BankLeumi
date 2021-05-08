@@ -1,2 +1,4 @@
-package pageobjects;public class PublicInquiriesPage {
+package pageobjects;
+
+public class PublicInquiriesPage {
 }
